@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`复杂跨域请求 1`] = `
+"OPTIONS /cors-complex HTTP/1.1
+User-Agent: curl/7.38.0
+Accept: */*
+Content-Type: application/json
+Origin: http://www.404mzk.com
+Host: study-http.404mzk.com
+
+HTTP/1.1 204 No Content
+Server: nginx/1.17.10
+Date: mock-time
+Connection: keep-alive
+Access-Control-Max-Age: 1728000
+Content-Type: text/plain charset=UTF-8
+Content-Length: 0
+
+"
+`;
+
+exports[`复杂跨域请求 2`] = `
+"POST /cors-complex HTTP/1.1
+User-Agent: curl/7.38.0
+Accept: */*
+Content-Type: application/json
+Origin: http://www.404mzk.com
+Host: study-http.404mzk.com
+
+HTTP/1.1 200 OK
+Server: nginx/1.17.10
+Date: mock-time
+Content-Type: application/octet-stream
+Content-Length: 26
+Connection: keep-alive
+Access-Control-Allow-Origin: http://www.404mzk.com
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+Access-Control-Allow-Headers: Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Requested-With
+
+hello-world complex-cookie"
+`;
+
+exports[`简单跨域请求 1`] = `
+"GET /cors-sample HTTP/1.1
+User-Agent: curl/7.38.0
+Accept: */*
+Host: study-http.404mzk.com
+Origin: http://www.404mzk.com
+
+HTTP/1.1 200 OK
+Server: nginx/1.17.10
+Date: mock-time
+Content-Type: application/octet-stream
+Content-Length: 23
+Connection: keep-alive
+Access-Control-Allow-Origin: http://www.404mzk.com
+
+hello-world cors-sample"
+`;

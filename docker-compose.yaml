@@ -1,0 +1,18 @@
+version: '3.4'
+x-restart-policy: &restart_policy
+  restart: unless-stopped
+services:
+  nginx:
+    << : *restart_policy
+    build: ./nginx
+    # 端口映射
+    volumes: 
+      - ./nginx/src:/code/src
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    ports:
+        - "9500:80"
+  jest:
+    << : *restart_policy
+    build: ./jest
+    volumes: 
+      - ./jest/__tests__:/code/__tests__

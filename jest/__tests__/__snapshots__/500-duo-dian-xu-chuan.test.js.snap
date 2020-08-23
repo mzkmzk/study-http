@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`多点续传 训练1 1`] = `
+"GET /test.log HTTP/1.1
+User-Agent: curl/7.38.0
+Accept: */*
+Range: bytes=1-3
+Host: study-http.404mzk.com
+
+HTTP/1.1 206 Partial Content
+Server: nginx/1.17.10
+Date: mock-time
+Content-Type: application/octet-stream
+Content-Length: 3
+Last-Modified: mock-time
+Connection: keep-alive
+ETag: \\"5ed8f9a5-f\\"
+Content-Range: bytes 1-3/15
+
+234"
+`;
+
+exports[`多点续传 训练2 1`] = `
+"GET /test.log HTTP/1.1
+User-Agent: curl/7.38.0
+Accept: */*
+Range: bytes=10-
+Host: study-http.404mzk.com
+
+HTTP/1.1 206 Partial Content
+Server: nginx/1.17.10
+Date: mock-time
+Content-Type: application/octet-stream
+Content-Length: 5
+Last-Modified: mock-time
+Connection: keep-alive
+ETag: \\"5ed8f9a5-f\\"
+Content-Range: bytes 10-14/15
+
+BCDEF"
+`;
+
+exports[`多点续传 训练3 1`] = `
+"GET /test.log HTTP/1.1
+User-Agent: curl/7.38.0
+Accept: */*
+Range: bytes=-3
+Host: study-http.404mzk.com
+
+HTTP/1.1 206 Partial Content
+Server: nginx/1.17.10
+Date: mock-time
+Content-Type: application/octet-stream
+Content-Length: 3
+Last-Modified: mock-time
+Connection: keep-alive
+ETag: \\"5ed8f9a5-f\\"
+Content-Range: bytes 12-14/15
+
+DEF"
+`;
+
+exports[`多点续传 训练4 1`] = `
+"GET /test.log HTTP/1.1
+User-Agent: curl/7.38.0
+Accept: */*
+Range: bytes=0-0,10-11
+Host: study-http.404mzk.com
+
+HTTP/1.1 206 Partial Content
+Server: nginx/1.17.10
+Date: mock-time
+Content-Type: multipart/byteranges; boundary=mock-boundary-00001
+Content-Length: 227
+Last-Modified: mock-time
+Connection: keep-alive
+ETag: \\"5ed8f9a5-f\\"
+
+
+--mock-boundary-00001
+Content-Type: application/octet-stream
+Content-Range: bytes 0-0/15
+
+1
+--mock-boundary-00001
+Content-Type: application/octet-stream
+Content-Range: bytes 10-11/15
+
+BC
+--mock-boundary-00001--
+"
+`;
+
+exports[`多点续传 训练5 1`] = `
+"GET /test.log HTTP/1.1
+User-Agent: curl/7.38.0
+Accept: */*
+Range: bytes=0-0
+If-Match: \\"error-etag\\"
+Host: study-http.404mzk.com
+
+HTTP/1.1 412 Precondition Failed
+Server: nginx/1.17.10
+Date: mock-time
+Content-Type: text/html
+Content-Length: 174
+Connection: keep-alive
+
+<html>
+<head><title>412 Precondition Failed</title></head>
+<body>
+<center><h1>412 Precondition Failed</h1></center>
+<hr><center>nginx/1.17.10</center>
+</body>
+</html>
+"
+`;

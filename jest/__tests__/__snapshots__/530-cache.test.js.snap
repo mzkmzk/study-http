@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`if-none-match测试 1`] = `
+"GET /test.log HTTP/1.1
+User-Agent: curl/7.38.0
+Accept: */*
+If-None-Match: \\"5ed8f9a5-f\\"
+Host: study-http.404mzk.com
+
+HTTP/1.1 304 Not Modified
+Server: nginx/1.17.10
+Date: mock-time
+Last-Modified: mock-time
+Connection: keep-alive
+ETag: \\"5ed8f9a5-f\\"
+
+"
+`;
+
+exports[`正常测试 1`] = `
+"GET /test.log HTTP/1.1
+User-Agent: curl/7.38.0
+Accept: */*
+Host: study-http.404mzk.com
+
+HTTP/1.1 200 OK
+Server: nginx/1.17.10
+Date: mock-time
+Content-Type: application/octet-stream
+Content-Length: 15
+Last-Modified: mock-time
+Connection: keep-alive
+ETag: \\"5ed8f9a5-f\\"
+Accept-Ranges: bytes
+
+123456789ABCDEF"
+`;

@@ -1,0 +1,17 @@
+{
+  "name": "study-http-jest",
+  "version": "1.0.0",
+  "description": "study-http-jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "cross-env NODE_ENV=production DEBUG=study-http* jest --watchAll"
+  },
+  "author": "maizhikun",
+  "license": "MIT",
+  "dependencies": {
+    "cross-env": "7.0.2",
+    "debug": "4.1.1",
+    "lodash": "4.17.15"
+  }
+}

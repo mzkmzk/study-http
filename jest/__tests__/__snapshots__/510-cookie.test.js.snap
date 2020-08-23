@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`服务器如何设置cookie 1`] = `
+"GET /set-cookie HTTP/1.1
+User-Agent: curl/7.38.0
+Accept: */*
+Host: study-http.404mzk.com
+
+HTTP/1.1 200 OK
+Server: nginx/1.17.10
+Date: mock-time
+Content-Type: application/octet-stream
+Content-Length: 22
+Connection: keep-alive
+Set-Cookie: cookie-key=cookie-value; Domain=404mzk.com; Path=/; Max-Age=1000;
+
+hello-world set-cookie"
+`;
